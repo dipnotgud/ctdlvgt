@@ -1,11 +1,11 @@
 #include<iostream>
 using namespace std;
-typedef struct{
+struct Cuahang{
 	char tenCH[100];
 	char tenchuCH[100];
 	float doanhthu;
 	int soluongNV;
-}Cuahang;
+};
 typedef struct nut{
 	Cuahang info;
 	nut*next;
@@ -71,6 +71,7 @@ void xoaCH(List &l){
 main(){
 	Cuahang ch1,ch2,ch3,ch4,ch5;
 	List l;
+	l.head = l.tail=NULL;
 	Input(ch1);
 	Input(ch2);
 	Input(ch3);
