@@ -43,6 +43,16 @@ void push(List &l, Cuahang a){
 		l.head = p;
 	}
 }
+//Hien thi danh sach cua hang co doanh thu > 100tr
+void hienthi(List &l){
+	Node *p = l.head;
+	cout<<"=====DANH SACH CUA HANG CO DOANH THU TREN 100TR====="<<endl;
+	while(p!=NULL){
+		if (p->info.doanhthu>100000000)
+			cout<<p->info.tenCH<<", "<<p->info.tenchuCH<<", "<<p->info.doanhthu<<","<<p->info.soluongNV<<endl;
+		p = p->next;
+	}
+}
 //Chen vao vi tri thu 5
 void chen5(List &l, Cuahang a){
 	Node *p = l.head;
@@ -54,9 +64,9 @@ void chen5(List &l, Cuahang a){
 	q->next = p->next;
 	p->next = q;
 }
+//Xoa cua hang dau tien trong danh sach co doanh thu < 10tr
 void xoaCH(List &l){
 	Node *p = l.head;
-	Node *q = new Node;
 	while(p!=NULL){
 		p = p->next;
 		if (p->next->info.doanhthu<10000000){
@@ -64,8 +74,8 @@ void xoaCH(List &l){
 			p = p->next;
 			p->next = NULL;
 			delete p;
-			break;
 		}
+		break;
 	}
 }
 main(){
@@ -89,4 +99,5 @@ main(){
 	Output(l);
 	xoaCH(l);
 	Output(l);
+	//hienthi(l);
 }
